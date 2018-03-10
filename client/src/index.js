@@ -2,7 +2,7 @@ import React, {
   Component
 } from 'react';
 import ReactDOM from 'react-dom';
-import ReactFilestack from 'filestack-react';
+import ReactFilestack from 'react-filestack';
 
 class App extends Component {
   render() {
