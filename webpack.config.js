@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -20,5 +21,9 @@ module.exports = {
        }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'FILEPICKER_API_KEY': JSON.stringify(process.env.FILEPICKER_API_KEY)})
+    ]
 };

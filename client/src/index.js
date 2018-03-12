@@ -1,13 +1,12 @@
-import React, {
-  Component
-} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import ReactFilestack from 'react-filestack';
+import ReactFilestack from 'filestack-react';
+import env from '../.frontendenv.js';
 
 class App extends Component {
   render() {
     return ( <div>
-      <ReactFilestack apikey = {process.env.FILEPICKER_API_KEY}
+      <ReactFilestack apikey = {env.FILEPICKER_API_KEY}
       buttonText = "Click me"
       buttonClass = "classname"/>
       <h2 > Hiring portal for HolaCode students < /h2>
