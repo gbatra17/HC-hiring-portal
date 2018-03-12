@@ -31,7 +31,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "prod": "NODE_ENV=production node server/index.js"
+    "prod": "NODE_ENV=production node server/index.js",
+    "postinstall": "webpack -p"
   },
   "author": "Garima Batra",
   "license": "ISC"
