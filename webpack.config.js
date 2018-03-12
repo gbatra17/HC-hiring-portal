@@ -24,6 +24,6 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'FILEPICKER_API_KEY': JSON.stringify(process.env.FILEPICKER_API_KEY)})
+      'process.env.FILEPICKER_API_KEY': JSON.stringify(process.env.FILEPICKER_API_KEY)})
     ]
 };
