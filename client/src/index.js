@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ReactFilestack from 'filestack-react';
-import env from '../frontendenv.js';
 
 class App extends Component {
   render() {
     return ( <div>
-      {console.log(process.env.FILEPICKER_API_KEY)}
-      <ReactFilestack apikey = {FILEPICKER_API_KEY}
-      buttonText = "Click me"
+      <ReactFilestack apikey = {process.env.FILEPICKER_API_KEY}
+      buttonText = "Upload Document Here"
       buttonClass = "classname"/>
       <h2 > Hiring portal for HolaCode students < /h2>
       <h3 > Made using FileStack < /h3> <
