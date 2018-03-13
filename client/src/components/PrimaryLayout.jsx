@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {Link, Route, Switch} from 'react-router-dom';
+import AddJob from './AddJob.jsx'
+import About from './About.jsx'
+import Table from './Table.jsx'
+
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
 import {cyan500} from 'material-ui/styles/colors';
@@ -6,11 +11,22 @@ import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import {Link} from 'react-router-dom';
-
+import Paper from 'material-ui/Paper';
 
 const toolbarStyle = {
   backgroundColor: cyan500
+}
+
+const paperStyle = {
+  height: 100,
+  width: 100,
+  margin: 20,
+  textAlign: 'center',
+  display: 'inline-block',
+};
+
+const linkStyle = {
+  textDecoration: 'none'
 }
 
 const style = {
@@ -36,6 +52,7 @@ class PrimaryLayout extends Component {
 
   render() {
     return (
+      <div>
   <Toolbar style={toolbarStyle}>
     <ToolbarGroup>
     <IconButton onClick={this.handleToggle} tooltip="Menu" tooltipPosition="bottom-center"><ActionHome /></IconButton>
@@ -45,14 +62,20 @@ class PrimaryLayout extends Component {
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
           >
-          <Link to="/postjob"><MenuItem onClick={this.handleClose}>Post A Job</MenuItem></Link>
-          <Link to="/about"><MenuItem onClick={this.handleClose}>About Us</MenuItem></Link>
-          <Link to="/forum"><MenuItem onClick={this.handleClose}>Look For Jobs</MenuItem></Link>
+          <Link to="/postjob" style={linkStyle}><MenuItem onClick={this.handleClose}>Post A Job</MenuItem></Link>
+          <Link to="/about" style={linkStyle}><MenuItem onClick={this.handleClose}>About Us</MenuItem></Link>
+          <Link to="/" style={linkStyle}><MenuItem onClick={this.handleClose}>Look For Jobs</MenuItem></Link>
         </Drawer>
     </ToolbarGroup>
-    <ToolbarTitle text="HolaCode Hiring Portal" style={style} />
+    <Link to="/" style={linkStyle}><ToolbarTitle text="HolaCode Hiring Portal" style={style} /></Link>
     <img src="footer_logo.png" height="40" width="40" />
   </Toolbar>
+
+  <Route path="/postjob" component={AddJob} />
+  <Route path="/about" component={About} />
+  <Route exact path="/" component={Table} />
+
+  </div>
 )
 }
 };

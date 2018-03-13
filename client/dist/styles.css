@@ -11,3 +11,18 @@
 } */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.btn-filestack {
+  background-color: #EE4632;
+  border-color: #EE4632;
+}
+.btn-filestack, .btn-filestack:hover {
+  color: #FFF;
+}
+.btn-filestack:hover {
+  background-color: #db2812;
+}
+.metadata {
+  font-style: italic;
+  margin-bottom: 2em;
+}

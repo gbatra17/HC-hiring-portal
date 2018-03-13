@@ -1,12 +1,17 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
+
+const style = {
+  height: 100,
+  width: 100,
+  margin: 20,
+  textAlign: 'center',
+  display: 'inline-block',
+};
 
 const About = () => (
-  <ReactFilestack apikey = {process.env.FILEPICKER_API_KEY}
-  buttonText = "Upload Document Here"
-  buttonClass = "classname"/>
-  <h2 > Hiring portal for HolaCode students </h2>
-  <h3 > Made using FileStack </h3>
+  <div><Paper style={style} zDepth={1}><h2 > About Us </h2></Paper></div>
 );
 
 export default About;

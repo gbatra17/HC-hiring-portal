@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -17,7 +18,7 @@ module.exports = {
         loader : 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['react', 'es2015']
+          presets: ["es2015", "react", "stage-0"]
        }
       }
     ]
