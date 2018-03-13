@@ -3,15 +3,20 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 
 const style = {
-  height: 100,
-  width: 100,
-  margin: 20,
+  height: 500,
+  width: 500,
+  margin: 'auto',
   textAlign: 'center',
-  display: 'inline-block',
+  display: 'inline-block'
 };
 
 const About = () => (
-  <div><Paper style={style} zDepth={1}><h2 > About Us </h2></Paper></div>
+  <div><Paper style={style} zDepth={1}>
+  <h2 > HolaCode is a 5 month immersive software engineering bootcamp
+focused on creating better life opportunities.
+Visit us at <a href="www.holacode.com">HolaCode</a></h2>
+<h3>Hiring portal made by: Garima Batra</h3>
+</Paper></div>
 );
 
 export default About;
