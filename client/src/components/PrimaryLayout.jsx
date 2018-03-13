@@ -6,6 +6,7 @@ import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import {Link} from 'react-router-dom';
 
 
 const toolbarStyle = {
@@ -17,7 +18,7 @@ const style = {
   color: 'white'
 };
 
-class Header extends Component {
+class PrimaryLayout extends Component {
   constructor(props) {
      super(props);
      this.state = {open: false};
@@ -44,9 +45,9 @@ class Header extends Component {
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
           >
-          <MenuItem onClick={this.handleClose}>Post A Job</MenuItem>
-          <MenuItem onClick={this.handleClose}>About Us</MenuItem>
-          <MenuItem onClick={this.handleClose}>Look For Jobs</MenuItem>
+          <Link to="/postjob"><MenuItem onClick={this.handleClose}>Post A Job</MenuItem></Link>
+          <Link to="/about"><MenuItem onClick={this.handleClose}>About Us</MenuItem></Link>
+          <Link to="/forum"><MenuItem onClick={this.handleClose}>Look For Jobs</MenuItem></Link>
         </Drawer>
     </ToolbarGroup>
     <ToolbarTitle text="HolaCode Hiring Portal" style={style} />
@@ -56,4 +57,4 @@ class Header extends Component {
 }
 };
 
-export default Header;
+export default PrimaryLayout;
