@@ -23,7 +23,7 @@ const TableView = () => (
       </TableHeader>
       <TableBody displayRowCheckbox={false}>
         <TableRow showRowHover={true} >
-          <TableRowColumn>Icani Labs</TableRowColumn>
+          <TableRowColumn>Icalia Labs</TableRowColumn>
           <TableRowColumn>12/3/2018</TableRowColumn>
           <TableRowColumn>Preview Coming</TableRowColumn>
           <TableRowColumn>Download Coming</TableRowColumn>
