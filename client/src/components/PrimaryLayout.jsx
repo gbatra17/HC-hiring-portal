@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import AddJob from './AddJob.jsx'
 import About from './About.jsx'
-import Table from './Table.jsx'
+import TableView from './Table.jsx'
 
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
 import {cyan500} from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
-import ActionHome from 'material-ui/svg-icons/action/home';
+import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
@@ -55,7 +55,7 @@ class PrimaryLayout extends Component {
       <div>
   <Toolbar style={toolbarStyle}>
     <ToolbarGroup>
-    <IconButton onClick={this.handleToggle} tooltip="Menu" tooltipPosition="bottom-center"><ActionHome /></IconButton>
+    <IconButton onClick={this.handleToggle} tooltip="Menu" tooltipPosition="bottom-center"><MenuIcon /></IconButton>
       <Drawer
             docked={false}
             width={200}
@@ -73,7 +73,7 @@ class PrimaryLayout extends Component {
 
   <Route path="/postjob" component={AddJob} />
   <Route path="/about" component={About} />
-  <Route exact path="/" component={Table} />
+  <Route exact path="/" component={TableView} />
 
   </div>
 )

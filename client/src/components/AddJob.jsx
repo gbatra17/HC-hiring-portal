@@ -41,6 +41,14 @@ export default class AddJob extends Component {
     );
   };
 
+  //Your Company Name
+  //Your Name
+  //Phone
+  //How did you hear about us?
+  //Job Title
+  //Location
+  //Document
+  //What type of job is it? Full-time, part-time, temporary, contract, internship, commision, contract
   render () {
     const { url, metadata } = this.state;
     return (
@@ -56,6 +64,7 @@ export default class AddJob extends Component {
             >
               <i className="glyphicon glyphicon-upload" /> Upload Document
             </button>
+
           </div>
         </div>
       </div>
