@@ -12,9 +12,23 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.get('/newjob', (req, res) => {
-  //post into database here
-})
+app.post('/newjob', (req, res) => {
+  Job.create({
+			companyName : req.body.companyName,
+      jobTitle: req.body.jobTitle,
+      codingChallenge: req.body.codingChallenge;
+		}, function(err, job) {
+			if(err){
+				res.send(err);
+			}
+			Job.find(function(err, jobs) {
+				if(err){
+					res.send(err);
+				}
+			res.json(jobs);
+		});
+	});
+});
 //catch all to handle routes so refresh is enabled on the front-end
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));

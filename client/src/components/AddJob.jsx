@@ -9,7 +9,9 @@ import {lightBlue300} from 'material-ui/styles/colors';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-const client = filestack.init('Ad1MIL2M5QlOyxEKYeO9Yz');
+const client = filestack.init(process.env.FILEPICKER_API_KEY);
+
+//'Ad1MIL2M5QlOyxEKYeO9Yz'
 
 const styles ={
   cardStyle: {
