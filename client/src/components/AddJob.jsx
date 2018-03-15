@@ -9,7 +9,10 @@ export default class AddJob extends Component {
 
   constructor (props) {
     super(props);
-    this.state = { url: null, metadata: null };
+    this.state = {
+      url: null,
+      metadata: null
+    };
     this.uploadDoc = this.uploadDoc.bind(this);
     this.setDoc = this.setDoc.bind(this);
     this.getMetadata = this.getMetadata.bind(this);

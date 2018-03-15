@@ -17,6 +17,8 @@ const TableView = () => (
         <TableRow showRowHover={true} displayRowCheckbox={false}>
           <TableHeaderColumn>Name Of Company</TableHeaderColumn>
           <TableHeaderColumn>Date Of Post</TableHeaderColumn>
+          <TableHeaderColumn>Position</TableHeaderColumn>
+          <TableHeaderColumn>Coding Challenge</TableHeaderColumn>
           <TableHeaderColumn>Preview</TableHeaderColumn>
           <TableHeaderColumn>Download</TableHeaderColumn>
         </TableRow>
@@ -25,6 +27,8 @@ const TableView = () => (
         <TableRow showRowHover={true} >
           <TableRowColumn>Icalia Labs</TableRowColumn>
           <TableRowColumn>12/3/2018</TableRowColumn>
+          <TableHeaderColumn>Software Engineer</TableHeaderColumn>
+          <TableHeaderColumn>Yes</TableHeaderColumn>
           <TableRowColumn>Preview Coming</TableRowColumn>
           <TableRowColumn>Download Coming</TableRowColumn>
         </TableRow>
