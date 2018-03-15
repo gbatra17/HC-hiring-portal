@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 import ReactFilestack from 'filestack-react';
 import Paper from 'material-ui/Paper';
 import filestack from 'filestack-js';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FLatButton';
 
 const client = filestack.init('Ad1MIL2M5QlOyxEKYeO9Yz');
+
+const cardStyle = {
+  margin: '0 auto',
+  width: '30%',
+  textAlign: 'center'
+}
 
 export default class AddJob extends Component {
 
@@ -55,22 +63,14 @@ export default class AddJob extends Component {
   render () {
     const { url, metadata } = this.state;
     return (
-      <div className="container">
-        <div className="page-header">
-          <h1>Upload Files</h1>
-        </div>
-        <div className="row">
-          <div className="text-center">
-            <button
-              type="button"
-              onClick={this.setDoc}
-            >
-              <i className="glyphicon glyphicon-upload" /> Upload Document
-            </button>
-
-          </div>
-        </div>
-      </div>
+      <Card style={cardStyle}>
+        <CardHeader
+      title="Post A Job"
+    />
+    <CardActions>
+          <FlatButton label="Upload Document" onClick={this.setDoc}/>
+        </CardActions>
+      </Card>
     );
   }
 }
