@@ -67,7 +67,7 @@ class PrimaryLayout extends Component {
         </Drawer>
     </ToolbarGroup>
     <Link to="/" style={linkStyle}><ToolbarTitle text="HolaCode Hiring Portal" style={style} /></Link>
-    <img src="footer_logo.png" height="40" width="40" />
+    <img src="footer_logo.png" style={{marginTop: 8}} height="40" width="40" />
   </Toolbar>
 
   <Route path="/postjob" component={AddJob} />
