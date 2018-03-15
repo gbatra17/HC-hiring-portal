@@ -55,7 +55,7 @@ class PrimaryLayout extends Component {
       <div>
   <Toolbar style={toolbarStyle}>
     <ToolbarGroup>
-    <IconButton onClick={this.handleToggle} tooltip="Menu" tooltipPosition="bottom-center"><MenuIcon /></IconButton>
+    <IconButton onClick={this.handleToggle} ><MenuIcon /></IconButton>
       <Drawer
             docked={false}
             width={200}
