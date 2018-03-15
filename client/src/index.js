@@ -9,6 +9,7 @@ import PrimaryLayout from './components/PrimaryLayout.jsx'
 
 // Todo:
 // -add form with Filepicker with details to apply
+// -add external link to HolaCode
 // -Add table for forum that is updated with filepicker data and preview/download buttons
 
 class App extends Component {
