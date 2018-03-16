@@ -50,6 +50,8 @@ export default class AddJob extends Component {
     this.getMetadata = this.getMetadata.bind(this);
     this.postJob = this.postJob.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleCompanyName = this.handleCompanyName.bind(this);
+    this.handleJobTitle = this.handleJobTitle.bind(this);
   }
 
   setDoc = () => {
@@ -89,6 +91,8 @@ export default class AddJob extends Component {
   }
 
   handleChange = (e, index, value) => this.setState({codingChallenge: value});
+  handleCompanyName = (e, index, value) => this.setState({companyName: value});
+  handleJobTitle = (e, index, value) => this.setState({jobTitle: value})
 
   //Your Company Name
   //Your Name
@@ -110,14 +114,14 @@ export default class AddJob extends Component {
         errorText="This field is required"
         errorStyle={styles.errorStyle}
         value={this.state.companyName}
-        onChange={this.handleChange}
+        onChange={this.handleCompanyName}
       />
     <TextField
           hintText="Job Title"
           errorText="This field is required"
           errorStyle={styles.errorStyle}
           value={this.state.jobTitle}
-          onChange={this.handleChange}
+          onChange={this.handleJobTitle}
       />
       <SelectField
         floatingLabelText="Coding Challenge"
