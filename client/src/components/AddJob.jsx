@@ -8,6 +8,7 @@ import TextField from 'material-ui/TextField';
 import {lightBlue300} from 'material-ui/styles/colors';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import axios from 'axios';
 
 const client = filestack.init('Ad1MIL2M5QlOyxEKYeO9Yz');
 
@@ -83,7 +84,8 @@ export default class AddJob extends Component {
   postJob = () => {
     axios.post('/newjob', {
       companyName: this.state.companyName,
-      jobName: this.state.jobName
+      jobName: this.state.jobName,
+      codingChallenge: this.state.codingChallenge
     })
     .then(() => {
       console.log("Job posted!")
@@ -131,11 +133,10 @@ export default class AddJob extends Component {
             <MenuItem value={1} primaryText="Yes" />
             <MenuItem value={2} primaryText="No" />
       </SelectField>
-      {console.log(this.state.codingChallenge)}
     <CardActions>
           <RaisedButton label="Upload Job Description" primary={true} onClick={this.setDoc}/>
           <br></br>
-          <RaisedButton label="Post Job" secondary={true} style={styles.buttonStyle}/>
+          <RaisedButton label="Post Job" secondary={true} style={styles.buttonStyle} onClick={this.postJob}/>
         </CardActions>
     </Card>
     );
