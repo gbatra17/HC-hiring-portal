@@ -9,7 +9,7 @@ import {lightBlue300} from 'material-ui/styles/colors';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-const client = filestack.init(process.env.FILEPICKER_API_KEY);
+const client = filestack.init('Ad1MIL2M5QlOyxEKYeO9Yz');
 
 //'Ad1MIL2M5QlOyxEKYeO9Yz'
 
@@ -91,8 +91,8 @@ export default class AddJob extends Component {
   }
 
   handleChange = (e, index, value) => this.setState({codingChallenge: value});
-  handleCompanyName = (e, index, value) => this.setState({companyName: value});
-  handleJobTitle = (e, index, value) => this.setState({jobTitle: value})
+  handleCompanyName = (e) => this.setState({companyName: e.target.value});
+  handleJobTitle = (e) => this.setState({jobTitle: e.target.value})
 
   //Your Company Name
   //Your Name
@@ -109,7 +109,7 @@ export default class AddJob extends Component {
       title="Post A Job"
       style={styles.textStyle}
     />
-    <TextField
+  <TextField
         hintText="Your Company Name"
         errorText="This field is required"
         errorStyle={styles.errorStyle}
@@ -131,6 +131,7 @@ export default class AddJob extends Component {
             <MenuItem value={1} primaryText="Yes" />
             <MenuItem value={2} primaryText="No" />
       </SelectField>
+      {console.log(this.state.codingChallenge)}
     <CardActions>
           <RaisedButton label="Upload Job Description" primary={true} onClick={this.setDoc}/>
           <br></br>
