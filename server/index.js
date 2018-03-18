@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 const path = require('path');
 const Job = require('../database/job')
+const db = require('../database/config')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -18,11 +19,11 @@ app.post('/newjob', (req, res) => {
 			companyName : req.body.companyName,
       jobTitle: req.body.jobTitle,
       codingChallenge: req.body.codingChallenge
-		}, function(err, job) {
+		}, (err, job) => {
 			if(err){
 				res.send(err);
 			}
-			Job.find(function(err, jobs) {
+			Job.find((err, jobs) => {
 				if(err){
 					res.send(err);
 				}

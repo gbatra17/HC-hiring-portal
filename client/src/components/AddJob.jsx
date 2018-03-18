@@ -84,7 +84,7 @@ export default class AddJob extends Component {
   postJob = () => {
     axios.post('/newjob', {
       companyName: this.state.companyName,
-      jobName: this.state.jobName,
+      jobTitle: this.state.jobTitle,
       codingChallenge: this.state.codingChallenge
     })
     .then(() => {
@@ -96,14 +96,6 @@ export default class AddJob extends Component {
   handleCompanyName = (e) => this.setState({companyName: e.target.value});
   handleJobTitle = (e) => this.setState({jobTitle: e.target.value})
 
-  //Your Company Name
-  //Your Name
-  //Phone
-  //How did you hear about us?
-  //Job Title
-  //Location
-  //Document
-  //What type of job is it? Full-time, part-time, temporary, contract, internship, commision, contract
   render () {
     return (
       <Card style={styles.cardStyle}>

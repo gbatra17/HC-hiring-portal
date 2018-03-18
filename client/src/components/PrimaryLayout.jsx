@@ -13,26 +13,25 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
 
-const toolbarStyle = {
-  backgroundColor: cyan500
+const styles = {
+  toolbarStyle: {
+    backgroundColor: cyan500
+  },
+  paperStyle: {
+    height: 100,
+    width: 100,
+    margin: 20,
+    textAlign: 'center',
+    display: 'inline-block',
+  },
+  linkStyle: {
+    textDecoration: 'none'
+  },
+  textstyle: {
+    fontFamily: 'Montserrat',
+    color: 'white'
+  }
 }
-
-const paperStyle = {
-  height: 100,
-  width: 100,
-  margin: 20,
-  textAlign: 'center',
-  display: 'inline-block',
-};
-
-const linkStyle = {
-  textDecoration: 'none'
-}
-
-const style = {
-  fontFamily: 'Montserrat',
-  color: 'white'
-};
 
 class PrimaryLayout extends Component {
   constructor(props) {
@@ -53,7 +52,7 @@ class PrimaryLayout extends Component {
   render() {
     return (
       <div>
-  <Toolbar style={toolbarStyle}>
+  <Toolbar style={styles.toolbarStyle}>
     <ToolbarGroup>
     <IconButton onClick={this.handleToggle} ><MenuIcon /></IconButton>
       <Drawer
@@ -62,11 +61,11 @@ class PrimaryLayout extends Component {
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
           >
-          <Link to="/postjob" style={linkStyle}><MenuItem onClick={this.handleClose}>Post A Job</MenuItem></Link>
-          <Link to="/" style={linkStyle}><MenuItem onClick={this.handleClose}>Look For Jobs</MenuItem></Link>
+          <Link to="/postjob" style={styles.linkStyle}><MenuItem onClick={this.handleClose}>Post A Job</MenuItem></Link>
+          <Link to="/" style={styles.linkStyle}><MenuItem onClick={this.handleClose}>Look For Jobs</MenuItem></Link>
         </Drawer>
     </ToolbarGroup>
-    <Link to="/" style={linkStyle}><ToolbarTitle text="HolaCode Hiring Portal" style={style} /></Link>
+    <Link to="/" style={styles.linkStyle}><ToolbarTitle text="HolaCode Hiring Portal" style={styles.textstyle} /></Link>
     <img src="footer_logo.png" style={{marginTop: 8}} height="40" width="40" />
   </Toolbar>
 
