@@ -5,6 +5,7 @@ const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 8080;
 const path = require('path');
+const Job = require('../database/job')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -29,6 +30,7 @@ app.post('/newjob', (req, res) => {
 		});
 	});
 });
+
 //catch all to handle routes so refresh is enabled on the front-end
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
