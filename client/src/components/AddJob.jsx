@@ -49,7 +49,7 @@ export default class AddJob extends Component {
     this.uploadDoc = this.uploadDoc.bind(this);
     this.setDoc = this.setDoc.bind(this);
     this.getMetadata = this.getMetadata.bind(this);
-    this.postJob = this.postJob.bind(this);
+    this.postNewJob = this.postNewJob.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleCompanyName = this.handleCompanyName.bind(this);
     this.handleJobTitle = this.handleJobTitle.bind(this);
@@ -81,15 +81,13 @@ export default class AddJob extends Component {
     );
   };
 
-  postJob = () => {
-    axios.post('/newjob', {
-      companyName: this.state.companyName,
-      jobTitle: this.state.jobTitle,
-      codingChallenge: this.state.codingChallenge
-    })
-    .then(() => {
-      console.log("Job posted!")
-    })
+  postNewJob = () => {
+    this.props.postJob(this.state.companyName, this.state.jobTitle, this.state.codingChallenge)
+      this.setState({
+        companyName: '',
+        jobTitle: '',
+        codingChallenge: ''
+      })
   }
 
   handleChange = (e, index, value) => this.setState({codingChallenge: value});
@@ -128,7 +126,7 @@ export default class AddJob extends Component {
     <CardActions>
           <RaisedButton label="Upload Job Description" primary={true} onClick={this.setDoc}/>
           <br></br>
-          <RaisedButton label="Post Job" secondary={true} style={styles.buttonStyle} onClick={this.postJob}/>
+          <RaisedButton label="Post Job" secondary={true} style={styles.buttonStyle} onClick={this.postNewJob}/>
         </CardActions>
     </Card>
     );

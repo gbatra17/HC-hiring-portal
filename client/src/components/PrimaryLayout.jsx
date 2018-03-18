@@ -3,6 +3,7 @@ import {Link, Route, Switch} from 'react-router-dom';
 import AddJob from './AddJob.jsx'
 import Footer from './Footer.jsx'
 import TableView from './Table.jsx'
+import axios from 'axios';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarTitle} from 'material-ui/Toolbar';
@@ -36,9 +37,14 @@ const styles = {
 class PrimaryLayout extends Component {
   constructor(props) {
      super(props);
-     this.state = {open: false};
+     this.state = {
+       open: false,
+       listOfJobs: []
+     };
      this.handleToggle = this.handleToggle.bind(this);
      this.handleClose = this.handleClose.bind(this);
+     this.postJob = this.postJob.bind(this);
+     this.getJobs = this.getJobs.bind(this);
    }
 
    handleToggle(){
@@ -47,6 +53,29 @@ class PrimaryLayout extends Component {
 
    handleClose(){
      this.setState({open: false});
+   }
+
+   postJob = (companyName, jobTitle, codingChallenge) => {
+     axios.post('/newjob', {
+       companyName: companyName,
+       jobTitle: jobTitle,
+       codingChallenge: codingChallenge
+     })
+     .then(({data}) => {
+       console.log(data);
+       this.setState({listOfJobs: data})
+     })
+   }
+
+   getJobs(){
+     axios.get('/newjob')
+     .then(({data}) => {
+       this.setState({listOfJobs: data})
+     })
+   }
+
+   componentDidMount(){
+     this.getJobs();
    }
 
   render() {
@@ -69,8 +98,8 @@ class PrimaryLayout extends Component {
     <img src="footer_logo.png" style={{marginTop: 8}} height="40" width="40" />
   </Toolbar>
 
-  <Route path="/postjob" component={AddJob} />
-  <Route exact path="/" component={TableView} />
+  <Route path="/postjob" render={()=> <AddJob postJob={this.postJob}/>}/>
+  <Route exact path="/" render={()=> <TableView listOfJobs={this.state.listOfJobs}/>} />
 
   <Footer />
   </div>

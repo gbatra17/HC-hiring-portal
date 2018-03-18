@@ -10,11 +10,11 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
-const TableView = () => (
+const TableView = (props) => (
   <div>
     <Table selectable={false}>
       <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
-        <TableRow showRowHover={true} displayRowCheckbox={false}>
+        <TableRow>
           <TableHeaderColumn>Name Of Company</TableHeaderColumn>
           <TableHeaderColumn>Date Of Post</TableHeaderColumn>
           <TableHeaderColumn>Position</TableHeaderColumn>
@@ -24,14 +24,15 @@ const TableView = () => (
         </TableRow>
       </TableHeader>
       <TableBody displayRowCheckbox={false}>
-        <TableRow showRowHover={true} >
-          <TableRowColumn>Icalia Labs</TableRowColumn>
+        {console.log(props.listOfJobs)}
+        {props.listOfJobs.map((item) => <TableRow >
+          <TableRowColumn>{item.companyName}</TableRowColumn>
           <TableRowColumn>12/3/2018</TableRowColumn>
-          <TableHeaderColumn>Software Engineer</TableHeaderColumn>
-          <TableHeaderColumn>Yes</TableHeaderColumn>
+          <TableRowColumn>{item.jobTitle}</TableRowColumn>
+          <TableRowColumn>Yes</TableRowColumn>
           <TableRowColumn>Preview Coming</TableRowColumn>
           <TableRowColumn>Download Coming</TableRowColumn>
-        </TableRow>
+        </TableRow>)}
       </TableBody>
     </Table>
   </div>

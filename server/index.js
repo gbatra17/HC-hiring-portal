@@ -32,6 +32,16 @@ app.post('/newjob', (req, res) => {
 	});
 });
 
+app.get('/newjob', function(req, res) {
+		Job.find(function(err, jobs) {
+			if(err){
+				res.send(err);
+			}
+      console.log(jobs);
+			res.json(jobs);
+		});
+});
+
 //catch all to handle routes so refresh is enabled on the front-end
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
