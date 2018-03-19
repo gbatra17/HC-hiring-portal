@@ -37,7 +37,6 @@ app.get('/newjob', function(req, res) {
 			if(err){
 				res.send(err);
 			}
-      console.log(jobs);
 			res.json(jobs);
 		});
 });

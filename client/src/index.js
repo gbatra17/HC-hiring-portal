@@ -8,8 +8,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import PrimaryLayout from './components/PrimaryLayout.jsx'
 
 // Todo:
-// -add form with Filepicker with details to apply
-// -create mlabs database to store job data
 // -add external link to HolaCode
 // -Add table for forum that is updated with filepicker data and preview/download buttons
 

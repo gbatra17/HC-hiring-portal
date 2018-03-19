@@ -29,7 +29,7 @@ const TableView = (props) => (
           <TableRowColumn>{item.companyName}</TableRowColumn>
           <TableRowColumn>12/3/2018</TableRowColumn>
           <TableRowColumn>{item.jobTitle}</TableRowColumn>
-          <TableRowColumn>Yes</TableRowColumn>
+          <TableRowColumn>{item.codingChallenge === 1 ? "Yes" : "No"}</TableRowColumn>
           <TableRowColumn>Preview Coming</TableRowColumn>
           <TableRowColumn>Download Coming</TableRowColumn>
         </TableRow>)}
