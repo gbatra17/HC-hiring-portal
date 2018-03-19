@@ -7,10 +7,6 @@ import {cyan500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import PrimaryLayout from './components/PrimaryLayout.jsx'
 
-// Todo:
-// -add external link to HolaCode
-// -Add table for forum that is updated with filepicker data and preview/download buttons
-
 class App extends Component {
   render() {
     return (

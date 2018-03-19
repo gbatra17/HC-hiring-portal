@@ -19,8 +19,7 @@ const TableView = (props) => (
           <TableHeaderColumn>Date Of Post</TableHeaderColumn>
           <TableHeaderColumn>Position</TableHeaderColumn>
           <TableHeaderColumn>Coding Challenge</TableHeaderColumn>
-          <TableHeaderColumn>Preview</TableHeaderColumn>
-          <TableHeaderColumn>Download</TableHeaderColumn>
+          <TableHeaderColumn>Download Link</TableHeaderColumn>
         </TableRow>
       </TableHeader>
       <TableBody displayRowCheckbox={false}>
@@ -29,8 +28,7 @@ const TableView = (props) => (
           <TableRowColumn>12/3/2018</TableRowColumn>
           <TableRowColumn>{item.jobTitle}</TableRowColumn>
           <TableRowColumn>{item.codingChallenge === 1 ? "Yes" : "No"}</TableRowColumn>
-          <TableRowColumn>Preview Coming</TableRowColumn>
-          <TableRowColumn>{item.url}</TableRowColumn>
+          <TableRowColumn><a href={item.url}>Click to Download</a></TableRowColumn>
         </TableRow>)}
       </TableBody>
     </Table>

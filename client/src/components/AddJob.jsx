@@ -10,9 +10,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import axios from 'axios';
 
-const client = filestack.init('Ad1MIL2M5QlOyxEKYeO9Yz');
-
-//'Ad1MIL2M5QlOyxEKYeO9Yz'
+const client = filestack.init(process.env.FILEPICKER_API_KEY);
 
 const styles ={
   cardStyle: {

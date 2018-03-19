@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var uri = 'mongodb://heroku_czfcdzwq:g4baij6134kr1d72ns2slbeeol@ds115569.mlab.com:15569/heroku_czfcdzwq';
+var uri = process.env.MONGODB_URI;
 
 mongoose.Promise = global.Promise
 
