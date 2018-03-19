@@ -55,11 +55,12 @@ class PrimaryLayout extends Component {
      this.setState({open: false});
    }
 
-   postJob = (companyName, jobTitle, codingChallenge) => {
+   postJob = (companyName, jobTitle, codingChallenge, url) => {
      axios.post('/newjob', {
        companyName: companyName,
        jobTitle: jobTitle,
-       codingChallenge: codingChallenge
+       codingChallenge: codingChallenge,
+       url: url
      })
      .then(({data}) => {
        console.log(data);

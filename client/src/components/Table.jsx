@@ -24,14 +24,13 @@ const TableView = (props) => (
         </TableRow>
       </TableHeader>
       <TableBody displayRowCheckbox={false}>
-        {console.log(props.listOfJobs)}
         {props.listOfJobs.map((item) => <TableRow >
           <TableRowColumn>{item.companyName}</TableRowColumn>
           <TableRowColumn>12/3/2018</TableRowColumn>
           <TableRowColumn>{item.jobTitle}</TableRowColumn>
           <TableRowColumn>{item.codingChallenge === 1 ? "Yes" : "No"}</TableRowColumn>
           <TableRowColumn>Preview Coming</TableRowColumn>
-          <TableRowColumn>Download Coming</TableRowColumn>
+          <TableRowColumn>{item.url}</TableRowColumn>
         </TableRow>)}
       </TableBody>
     </Table>

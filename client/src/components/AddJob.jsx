@@ -48,7 +48,6 @@ export default class AddJob extends Component {
     };
     this.uploadDoc = this.uploadDoc.bind(this);
     this.setDoc = this.setDoc.bind(this);
-    this.getMetadata = this.getMetadata.bind(this);
     this.postNewJob = this.postNewJob.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleCompanyName = this.handleCompanyName.bind(this);
@@ -60,15 +59,7 @@ export default class AddJob extends Component {
       .then(data => {
         const { url, handle } = data.filesUploaded[0];
         this.setState({ url });
-        this.getMetadata(handle);
-        console.log(JSON.stringify(data.filesUploaded));
       })
-      .catch(err => console.log(err));
-  }
-
-  getMetadata = (handle) => {
-    client.metadata(handle)
-      .then(metadata => console.log(metadata))
       .catch(err => console.log(err));
   }
 
@@ -82,7 +73,7 @@ export default class AddJob extends Component {
   };
 
   postNewJob = () => {
-    this.props.postJob(this.state.companyName, this.state.jobTitle, this.state.codingChallenge)
+    this.props.postJob(this.state.companyName, this.state.jobTitle, this.state.codingChallenge, this.state.url)
       this.setState({
         companyName: '',
         jobTitle: '',

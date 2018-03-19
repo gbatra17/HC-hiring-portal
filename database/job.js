@@ -3,7 +3,8 @@ var mongoose = require('mongoose');
 var jobSchema = mongoose.Schema({
 	companyName: String,
   jobTitle: String,
-  codingChallenge: Number
+  codingChallenge: Number,
+	url: String
 })
 
 var Job = mongoose.model('Job', jobSchema);

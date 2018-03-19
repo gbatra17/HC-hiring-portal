@@ -18,7 +18,8 @@ app.post('/newjob', (req, res) => {
   Job.create({
 			companyName : req.body.companyName,
       jobTitle: req.body.jobTitle,
-      codingChallenge: req.body.codingChallenge
+      codingChallenge: req.body.codingChallenge,
+      url: req.body.url
 		}, (err, job) => {
 			if(err){
 				res.send(err);
