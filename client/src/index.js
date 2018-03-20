@@ -11,6 +11,7 @@ import PrimaryLayout from './components/PrimaryLayout.jsx'
 // - Add notification each time there's a new job
 // - Add social media handles for HC
 // - Add authorization for company vs student
+// - make mobile responsive
 
 class App extends Component {
   render() {
