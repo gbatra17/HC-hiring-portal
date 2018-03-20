@@ -7,6 +7,9 @@ import {cyan500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import PrimaryLayout from './components/PrimaryLayout.jsx'
 
+// - Add notification that job sent!
+// - Add notification each time there's a new job
+
 class App extends Component {
   render() {
     return (

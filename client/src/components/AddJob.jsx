@@ -42,6 +42,7 @@ export default class AddJob extends Component {
       metadata: null,
       companyName: '',
       jobTitle: '',
+      todaysDate: new Date().toJSON().slice(0,10).replace(/-/g,'/'),
       codingChallenge: 1
     };
     this.uploadDoc = this.uploadDoc.bind(this);
@@ -71,7 +72,7 @@ export default class AddJob extends Component {
   };
 
   postNewJob = () => {
-    this.props.postJob(this.state.companyName, this.state.jobTitle, this.state.codingChallenge, this.state.url)
+    this.props.postJob(this.state.companyName, this.state.jobTitle, this.state.codingChallenge, this.state.url, this.state.todaysDate)
       this.setState({
         companyName: '',
         jobTitle: '',

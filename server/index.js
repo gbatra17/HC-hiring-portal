@@ -19,7 +19,8 @@ app.post('/newjob', (req, res) => {
 			companyName : req.body.companyName,
       jobTitle: req.body.jobTitle,
       codingChallenge: req.body.codingChallenge,
-      url: req.body.url
+      url: req.body.url,
+      todaysDate: req.body.todaysDate
 		}, (err, job) => {
 			if(err){
 				res.send(err);

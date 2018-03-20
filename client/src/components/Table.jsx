@@ -25,7 +25,7 @@ const TableView = (props) => (
       <TableBody displayRowCheckbox={false}>
         {props.listOfJobs.map((item) => <TableRow >
           <TableRowColumn>{item.companyName}</TableRowColumn>
-          <TableRowColumn>12/3/2018</TableRowColumn>
+          <TableRowColumn>{item.todaysDate}</TableRowColumn>
           <TableRowColumn>{item.jobTitle}</TableRowColumn>
           <TableRowColumn>{item.codingChallenge === 1 ? "Yes" : "No"}</TableRowColumn>
           <TableRowColumn><a href={item.url}>Click to Download</a></TableRowColumn>
