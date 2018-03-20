@@ -1,3 +1,3 @@
 # hc-hiring-portal
 
-Hiring portal for HolaCode
+Hiring portal for HolaCode. Available at holacodehiring.herokuapp.com

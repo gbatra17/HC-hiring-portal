@@ -43,7 +43,6 @@ app.get('/newjob', function(req, res) {
 		});
 });
 
-//catch all to handle routes so refresh is enabled on the front-end
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
 })
