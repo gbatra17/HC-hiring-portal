@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import ReactFilestack from 'filestack-react';
 import filestack from 'filestack-js';
+import axios from 'axios';
+
 import Paper from 'material-ui/Paper';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import Snackbar from 'material-ui/Snackbar';
 import TextField from 'material-ui/TextField';
 import {lightBlue300} from 'material-ui/styles/colors';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import axios from 'axios';
 
 const client = filestack.init(process.env.FILEPICKER_API_KEY);
 
@@ -43,7 +45,8 @@ export default class AddJob extends Component {
       companyName: '',
       jobTitle: '',
       todaysDate: new Date().toJSON().slice(0,10).replace(/-/g,'/'),
-      codingChallenge: 1
+      codingChallenge: 1,
+      open: false
     };
     this.uploadDoc = this.uploadDoc.bind(this);
     this.setDoc = this.setDoc.bind(this);
@@ -76,10 +79,12 @@ export default class AddJob extends Component {
       this.setState({
         companyName: '',
         jobTitle: '',
-        codingChallenge: ''
+        codingChallenge: '',
+        open: true
       })
   }
 
+  handleRequestClose = () => this.setState({open: false});
   handleChange = (e, index, value) => this.setState({codingChallenge: value});
   handleCompanyName = (e) => this.setState({companyName: e.target.value});
   handleJobTitle = (e) => this.setState({jobTitle: e.target.value})
@@ -118,6 +123,12 @@ export default class AddJob extends Component {
           <br></br>
           <RaisedButton label="Post Job" secondary={true} style={styles.buttonStyle} onClick={this.postNewJob}/>
         </CardActions>
+        <Snackbar
+            open={this.state.open}
+            message="This job was posted!"
+            autoHideDuration={4000}
+            onRequestClose={this.handleRequestClose}
+          />
     </Card>
     );
   }
