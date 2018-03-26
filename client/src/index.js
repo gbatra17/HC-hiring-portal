@@ -7,7 +7,6 @@ import {cyan500} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import PrimaryLayout from './components/PrimaryLayout.jsx'
 
-// - Add push notification each time there's a new job // Slack bot everytime there's a new job
 // - Add social media handles for HC
 // - Add authorization for company vs student
 // - make mobile responsive

@@ -23,7 +23,7 @@ const About = () => (
   <div>
       <div style={styles.phantomStyle} />
         <AppBar title="HolaCode is a 5 month immersive software engineering bootcamp
-        focused on creating better life opportunities. Hiring portal made by: Garima Batra" titleStyle={styles.textstyle} style={styles.appStyle} showMenuIconButton={false}>
+        focused on creating better life opportunities. For questions/help, please email: scott@holacode.com" titleStyle={styles.textstyle} style={styles.appStyle} showMenuIconButton={false}>
         </AppBar>
   </div>
 
